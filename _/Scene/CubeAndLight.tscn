@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cs21o1usxrxps"]
+
+[ext_resource type="Script" uid="uid://dah1617cmwbfl" path="res://2026_08_12_gdp_ramasse_miettes/_/Scene/node_3d_init_xr.gd" id="1_m1iyv"]
+[ext_resource type="Script" uid="uid://dq7bc664doe6n" path="res://2026_08_12_gdp_ramasse_miettes/_/RandomTest/Script/load_and_delete_download_folder.gd" id="2_ppi7g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vk1xn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_m1iyv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5lg2d"]
+
+[node name="CubeAndLight" type="Node3D" unique_id=388986451]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=480004186]
+
+[node name="Node3D Init XR" type="Node3D" parent="." unique_id=2138926254]
+script = ExtResource("1_m1iyv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1766970258]
+transform = Transform3D(0.233, 0, 0, 0, 0.05, 0, 0, 0, 0.233, 0.494284, 0.427799, -0.867135)
+mesh = SubResource("BoxMesh_vk1xn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1770385884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.30709, 1.00219)
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=1381813518]
+current = true
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=235089805]
+transform = Transform3D(1.00896, 0, 0, 0, 1.00896, 0, 0, 0, 1.00896, 0, 0, 0)
+near = 0.001
+
+[node name="XRController3D Right" type="XRController3D" parent="XROrigin3D" unique_id=621364715]
+transform = Transform3D(0.99491, 0, 0, 0, 0.99491, 0, 0, 0, 0.99491, 0, 0, 0)
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D Right" unique_id=1723147165]
+transform = Transform3D(0.042, 0, 0, 0, 0.042, 0, 0, 0, 0.042, 0, 0, 0)
+mesh = SubResource("SphereMesh_m1iyv")
+skeleton = NodePath("")
+
+[node name="XRController3D Left" type="XRController3D" parent="XROrigin3D" unique_id=965569571]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D Left" unique_id=1866988996]
+transform = Transform3D(0.0424271, 0, 0, 0, 0.0424271, 0, 0, 0, 0.0424271, 0, 0, 0)
+mesh = SubResource("SphereMesh_m1iyv")
+skeleton = NodePath("")
+
+[node name="Node3D K9 Dog" type="Node3D" parent="." unique_id=866296179]
+
+[node name="Node" type="Node" parent="." unique_id=822870584]
+script = ExtResource("2_ppi7g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1230624393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.57221)
+mesh = SubResource("BoxMesh_5lg2d")
