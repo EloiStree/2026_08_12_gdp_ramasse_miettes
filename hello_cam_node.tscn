@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dkolrh6qo7m7u"]
+
+[ext_resource type="Script" uid="uid://d1cy31f8qsyqa" path="res://2026_08_12_gdp_ramasse_miettes/hello_cam.gd" id="1_mi3tc"]
+[ext_resource type="Shader" uid="uid://4jrv5xue2lpc" path="res://2026_08_12_gdp_ramasse_miettes/quest3_YUV_420_888_1280_960.gdshader" id="2_wqloj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0tk4"]
+shader = ExtResource("2_wqloj")
+
+[node name="Node3D" type="Node3D" unique_id=345863069]
+
+[node name="Control" type="Control" parent="." unique_id=440404937 node_paths=PackedStringArray("camera_view", "debug_label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mi3tc")
+camera_view = NodePath("TextureRect")
+debug_label = NodePath("Label")
+cam_id = 2
+format_id = 6
+
+[node name="Label" type="Label" parent="Control" unique_id=1630535655]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=98069087]
+material = SubResource("ShaderMaterial_a0tk4")
+layout_mode = 0
+offset_bottom = 40.0
+stretch_mode = 5
